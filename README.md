@@ -7,4 +7,5 @@ If you don't have time, you end up in the basement (unfortunately, there are no 
 Controls:
 
 Arrows and WASD - movement
+
 RighMouse - attack
