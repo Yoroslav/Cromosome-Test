@@ -19,9 +19,10 @@ public class Portal : MonoBehaviour
 
     public Vector3 targetScale = new Vector3(0f, 0f, 0f);
     public float shrinkDuration = 1f;
-
+    private TImer timer;
     private void Start()
     {
+        timer = FindObjectOfType<TImer>();
         player = GameObject.FindGameObjectWithTag("Player");
         sceneTransitions = FindObjectOfType<SceneTransitions>();
 
@@ -30,6 +31,11 @@ public class Portal : MonoBehaviour
         playerMovement = player.GetComponent<PlayerMovement>();
     }
 
+    private void Update()
+    {
+        if(timer.remainingTime < 0)
+            DisablePlayerComponents();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
