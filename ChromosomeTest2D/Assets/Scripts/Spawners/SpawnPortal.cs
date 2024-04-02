@@ -30,9 +30,5 @@ public class SpawnPortal : MonoBehaviour
             Transform randomPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
             Instantiate(portalPrefab, randomPoint.position, Quaternion.identity);
         }
-        else
-        {
-            Debug.LogWarning("No spawn points assigned to SpawnPortal script.");
-        }
     }
 }
