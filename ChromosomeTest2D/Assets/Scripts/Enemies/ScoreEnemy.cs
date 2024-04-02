@@ -4,15 +4,62 @@ using UnityEngine;
 
 public class ScoreEnemy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public int score;
+    public int addEnemy;
+    private ScoreManager scoreManager;
+
+    public GameObject deathEffect;
+    private UnityEngine.Object explosion;
+    private UnityEngine.Object enemyRef;
+
+    [SerializeField]
+    float timeDestroy;
+
+    Vector3 spawnPos;
+    private void Start()
     {
-        
+        explosion = Resources.Load("Explosion");
+        enemyRef = Resources.Load("Enemy");
+        spawnPos = transform.position;
+
+        scoreManager = FindAnyObjectByType<ScoreManager>();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+
+            if (scoreManager.numberOfChromosomes <= scoreManager.maxNumberOfChromosomes)
+            {
+                score++;
+            }
+            else
+            {
+                score--;
+            }
+
+            scoreManager.UpdateScoreText(score);
+            addEnemy++;
+            Died();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void Died()
     {
-        
+        GameObject explosionRef = (GameObject)Instantiate(explosion);
+        explosionRef.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+        gameObject.SetActive(false);
+
+        Invoke("Respawn", timeDestroy);
+    }
+
+    void Respawn()
+    {
+        GameObject enemyCopy = (GameObject)Instantiate(enemyRef);
+        enemyCopy.transform.position = new Vector3(Random.Range(spawnPos.x - 1, spawnPos.x + 1), Random.Range(spawnPos.y - 1, spawnPos.y + 1), spawnPos.z);
+
+        Destroy(gameObject);
     }
 }
+

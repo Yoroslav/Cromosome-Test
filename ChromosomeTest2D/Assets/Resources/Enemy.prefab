@@ -183,8 +183,9 @@ GameObject:
   - component: {fileID: 2245934841491718878}
   - component: {fileID: 456513831538278670}
   - component: {fileID: 9027388749485115449}
+  - component: {fileID: 1038584086474108094}
   m_Layer: 7
-  m_Name: Enemy1
+  m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -348,3 +349,19 @@ MonoBehaviour:
   tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   graphMask:
     value: -1
+--- !u!114 &1038584086474108094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8913497652153056652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c49d9218413294e84ab55b1b2c581c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: -5
+  addEnemy: 1
+  deathEffect: {fileID: 0}
+  timeDestroy: 5
