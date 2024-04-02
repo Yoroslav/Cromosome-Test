@@ -18,12 +18,13 @@ public class EnemyMovement : MonoBehaviour
 
     private float stopTime;
     public float startStopTime;
-    public float normalSpeed;
+    private float normalSpeed;
 
     public Transform enemyGFX;
     private EnemyCollision enemyCollision;
     void Start()
     {
+        normalSpeed = moveSpeed;
         seeker = GetComponent<Seeker>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
 

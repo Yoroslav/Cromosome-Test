@@ -303,10 +303,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36419eff77481a0469bf0ee1af9a335f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 800
+  moveSpeed: 500
   nextWaypointDistance: 3
   startStopTime: 0.7
-  normalSpeed: 800
+  normalSpeed: 500
   enemyGFX: {fileID: 5499085415476485272}
 --- !u!114 &456513831538278670
 MonoBehaviour:
@@ -362,6 +362,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: -5
-  addEnemy: 1
   deathEffect: {fileID: 0}
   timeDestroy: 5

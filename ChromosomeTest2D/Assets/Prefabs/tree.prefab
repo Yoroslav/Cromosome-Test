@@ -143,6 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c171df6333486d349aa019754e558b1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newSprite: {fileID: 21300000, guid: aded6746b1b383246868e7ca8b462730, type: 3}
-  oldSprite: {fileID: 21300000, guid: 7a738dd506ce0864d92a1aee2220af17, type: 3}
+  newSprite: {fileID: 21300000, guid: 7a738dd506ce0864d92a1aee2220af17, type: 3}
+  oldSprite: {fileID: 21300000, guid: aded6746b1b383246868e7ca8b462730, type: 3}
   detectionRadius: 4.32

@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        scoreText.text = $"Chromosomes: {numberOfChromosomes}";
+        scoreText.text = $"Chromosomes: {numberOfChromosomes} / {maxNumberOfChromosomes}";
     }
 
     public void UpdateScoreText(int score)

@@ -13,6 +13,7 @@ public class Portal : MonoBehaviour
     private PlayerCombat playerCombat;
     private PlayerMovement playerMovement;
 
+    private ScoreManager scoreManager;
     [Header("DOTween")]
     public float rotationAngle = 360f;
     public float rotationDuration = 1f;
@@ -25,6 +26,7 @@ public class Portal : MonoBehaviour
         timer = FindObjectOfType<TImer>();
         player = GameObject.FindGameObjectWithTag("Player");
         sceneTransitions = FindObjectOfType<SceneTransitions>();
+        scoreManager = FindObjectOfType<ScoreManager>();
 
         playerCollider = player.GetComponent<Collider2D>();
         playerCombat = player.GetComponent<PlayerCombat>();
@@ -40,8 +42,11 @@ public class Portal : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartAnimation();
-            DisablePlayerComponents();
+            if(scoreManager.numberOfChromosomes >= scoreManager.maxNumberOfChromosomes)
+            {
+                StartAnimation();
+                DisablePlayerComponents();
+            }
         }
     }
 
