@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class TImer : MonoBehaviour
 {
+    [Header("Setting Time")]
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float initialTime = 60.0f;
     [SerializeField] public float remainingTime;
+    [Header("Panel")]
     [SerializeField] private GameObject _lozeMenu;
 
     private SceneTransitions sceneTransitions;
