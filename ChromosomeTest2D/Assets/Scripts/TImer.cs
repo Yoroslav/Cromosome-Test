@@ -6,6 +6,7 @@ public class TImer : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float initialTime = 60.0f;
     [SerializeField] public float remainingTime;
+    [SerializeField] private GameObject _lozeMenu;
 
     private SceneTransitions sceneTransitions;
 
@@ -54,7 +55,7 @@ public class TImer : MonoBehaviour
 
         if (sceneTransitions != null)
         {
-            sceneTransitions.LoadScene("LOSE");
+            _lozeMenu.SetActive(true);
         }
     }
 
