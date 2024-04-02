@@ -5,7 +5,6 @@ using UnityEngine;
 public class ScoreEnemy : MonoBehaviour
 {
     public int score;
-    public int addEnemy;
     private ScoreManager scoreManager;
 
     public GameObject deathEffect;
@@ -29,17 +28,9 @@ public class ScoreEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
 
-            if (scoreManager.numberOfChromosomes <= scoreManager.maxNumberOfChromosomes)
-            {
-                score++;
-            }
-            else
-            {
-                score--;
-            }
+            score--;
 
             scoreManager.UpdateScoreText(score);
-            addEnemy++;
             Died();
         }
     }

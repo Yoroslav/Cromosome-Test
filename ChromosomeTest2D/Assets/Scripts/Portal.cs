@@ -10,7 +10,6 @@ public class Portal : MonoBehaviour
 
     private GameObject player;
     private Collider2D playerCollider;
-    private SpriteRenderer sprite;
     private PlayerCombat playerCombat;
     private PlayerMovement playerMovement;
 
